@@ -7,6 +7,6 @@ module Toyable
 
   def receive_toy(name)
     toy = Toy.find_or_create_by(name: name)
-    Toy.create(name: toy.name, toyable_id: self.id, toyable_type: self.class)
+    Toy.create!(name: toy.name, toyable_id: self.id, toyable_type: self.class)
   end
 end
