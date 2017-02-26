@@ -96,15 +96,15 @@ Elephant.paradeHelper = function (elephant) {
   console.log(`${elephant.name} is trotting by!`)
 };
 
-herd.forEach(Elephant.paradeHelper);
+herd.forEach (el => Elephant.paradeHelper(el))
 
   // Phase 4:
 function dinerBreakfast() {
-  let order = "I'd like cheesy scrambled eggs please.";
+  let order = `I'd like eggs please`;
   console.log(order);
 
-  return function (food) {
-    order = `${order.slice(0, order.length - 8)} and ${food} please.`;
+  return function(newOrder) {
+    order = (order.slice(0, -6) + `and ${newOrder} please`);
     console.log(order);
-  };
+  }
 }
